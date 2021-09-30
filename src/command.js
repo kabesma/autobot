@@ -40,7 +40,6 @@ async function gitBot(option) {
             gitValue = 0;
         }
     }
-
 }
 
 async function table(git) {
