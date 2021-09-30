@@ -31,7 +31,7 @@ async function gitBot(option) {
         console.log('\nConnecting to your repository, Please wait')
         table(gitStatus)
         gitValue++
-        console.log(await git.add('./*').commit(option.message))
+        commit(await git.add('./*').commit(option.message))
         if(typeof(option.branch) === 'undefined') {
             console.log(await git.push())
             gitValue = 0;
