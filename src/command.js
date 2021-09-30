@@ -44,7 +44,6 @@ async function gitBot(option) {
     }
 }
 
-
 async function commit(value) {
     console.log(chalk.red('\nYour commit successfull'))
     console.log('Status changes : ' + chalk.green(value.summary.changes))
