@@ -15,7 +15,7 @@ let gitValue = 0;
 async function running(option) {
     let now = new Date()
     console.log(chalk.green('Starting AutoBot development server : ' + now))
-    cron.schedule('*/20 * * * * *', async () => {
+    cron.schedule('* * * * *', async () => {
         now = new Date()
         await gitBot(option)
         console.log(chalk.blue('Active date : ' + now))
@@ -49,7 +49,7 @@ async function commit(value) {
     console.log(chalk.red('\nYour commit successfull'))
     console.log('Status changes : ' + value.summary.changes)
     console.log('Status insertions : ' + value.summary.insertions)
-    console.log('Status deletions : ' + value.summary.deletions)
+    console.log('Status deletions : ' + value.summary.deletions + '\n')
 }
 
 async function table(git) {
