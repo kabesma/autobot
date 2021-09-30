@@ -33,10 +33,12 @@ async function gitBot(option) {
         gitValue++
         commit(await git.add('./*').commit(option.message))
         if(typeof(option.branch) === 'undefined') {
-            console.log(await git.push())
+            //console.log(await git.push())
+            await git.push()
             gitValue = 0
         } else {
-            console.log(await git.push('origin', option.branch))
+            //console.log(await git.push('origin', option.branch))
+            await git.push('origin', option.branch)
             gitValue = 0
         }
     }
