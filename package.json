@@ -1,0 +1,33 @@
+{
+  "name": "autobot",
+  "version": "1.0.0",
+  "description": "This is autobot git push with cron job",
+  "main": "index.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kabesma/autobot.git"
+  },
+  "keywords": [
+    "autobot",
+    "git",
+    "automatic",
+    "bot",
+    "git-push",
+    "git-add",
+    "github",
+    "gitlab",
+    "bitbucket"
+  ],
+  "author": "Muh. Akil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kabesma/autobot/issues"
+  },
+  "homepage": "https://github.com/kabesma/autobot#readme",
+  "dependencies": {
+    "node-cron": "^3.0.0"
+  }
+}
