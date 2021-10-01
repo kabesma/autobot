@@ -7,7 +7,6 @@
     "test": "test.js"
   },
   "files": [
-    "lib",
     "src",
     "index.js",
     "package.json"
