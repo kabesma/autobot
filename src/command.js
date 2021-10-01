@@ -7,7 +7,7 @@ const simpleGit = require('simple-git')
 const git = simpleGit()
 const Table = require('cli-table')
 
-let gitValue = 0;
+let gitValue = 0
 /**
  * For run aplication
  *
@@ -25,7 +25,6 @@ async function running(option) {
 
 async function gitBot(option) {
     let gitStatus = await git.status('-s')
-    //console.log(gitStatus.modified.length)
     if(gitStatus.modified.length != 0 && gitValue === 0)
     {
         console.log('\nConnecting to your repository, Please wait')
@@ -33,11 +32,9 @@ async function gitBot(option) {
         gitValue++
         commit(await git.add('./*').commit(option.message))
         if(typeof(option.branch) === 'undefined') {
-            //console.log(await git.push())
             await git.push()
             gitValue = 0
         } else {
-            //console.log(await git.push('origin', option.branch))
             await git.push('origin', option.branch)
             gitValue = 0
         }
