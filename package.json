@@ -6,8 +6,14 @@
   "scripts": {
     "test": "test.js"
   },
+  "files": [
+    "lib",
+    "src",
+    "index.js",
+    "package.json"
+  ],
   "bin": {
-    "Autobot": "index.js"
+    "autobot-git": "index.js"
   },
   "repository": {
     "type": "git",
