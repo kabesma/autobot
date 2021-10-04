@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 
-const { running  } = require('./src/command.js')
+const { running, gitTest  } = require('./src/command.js')
 const { program } = require('commander')
 const chalk = require('chalk')
 const figlet = require('figlet')
@@ -12,11 +12,17 @@ async function main() {
     program
         .command('run')
         .description(
-          'Use run for running bot'
+          'Use run for autobot'
         )
         .option('-m, --message <string>', 'Add message with optional type')
-        .option('-b, --branch <string>', 'Push to branch option')
         .action(running)
+     program
+        .command('test')
+        .description(
+          'Use testing function'
+        )
+        .option('-g, --git <string>', 'Use status, add, pull, or push if you want testing')
+        .action(gitTest)
 
     console.log('')
     console.log(chalk.red(figlet.textSync("\nAutoBot Git", { font: 'ANSI Shadow', horizontalLayout: 'full' })))

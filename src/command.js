@@ -15,11 +15,11 @@ let gitValue = 0
 async function running(option) {
     let now = new Date()
     console.log(chalk.green('Starting AutoBot development server : ' + now))
-    cron.schedule('* * * * *', async () => {
+    cron.schedule('*/30 * * * *', async () => {
         now = new Date()
         await gitBot(option)
         console.log(chalk.blue('Active date : ' + now))
-        console.log('Running a task every minute, with message ' + option.message);
+        console.log('Running a task every minute, with message ' + option.message + ' - ' + now);
     })
 }
 
@@ -31,13 +31,10 @@ async function gitBot(option) {
         table(gitStatus)
         gitValue++
         commit(await git.add('./*').commit(option.message))
-        if(typeof(option.branch) === 'undefined') {
-            await git.push()
-            gitValue = 0
-        } else {
-            await git.push('origin', option.branch)
-            gitValue = 0
-        }
+        let branch = await git.branch()
+        await git.pull('origin', branch.current)
+        await git.push('origin', branch.current)
+        gitValue = 0
     }
 }
 
@@ -51,7 +48,7 @@ async function commit(value) {
 async function table(git) {
     let table = new Table({
         head: ['Status', 'Index', 'Path'],
-        colWidths: [30, 30, 30],
+        colWidths: [20, 20, 50],
         chars: {
             'top': '═' , 'top-mid': '╤' , 'top-left': '╔' , 'top-right': '╗',
             'bottom': '═' , 'bottom-mid': '╧' , 'bottom-left': '╚' , 'bottom-right': '╝',
@@ -66,6 +63,33 @@ async function table(git) {
     console.log(table.toString())
 }
 
+async function gitTest(option){
+    if (option.git === 'status')
+    {
+        let gitStatus = await git.status('-s')
+        console.log('\nConnecting to your repository, Please wait')
+        table(gitStatus)
+    }
+
+    if (option.git === 'add')
+    {
+        commit(await git.add('./*').commit('Testing git add and commit'))
+    }
+
+    if (option.git === 'pull')
+    {
+        let branch = await git.branch()
+        console.log(await git.pull('origin', branch.current))
+    }
+
+    if (option.git === 'push')
+    {
+        let branch = await git.branch()
+        console.log(await git.push('origin', branch.current))
+    }
+}
+
 module.exports = {
     running,
+    gitTest
 }
