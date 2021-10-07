@@ -40,8 +40,10 @@
     "cli-table": "^0.3.6",
     "commander": "^8.2.0",
     "figlet": "^1.5.2",
+    "fs": "^0.0.1-security",
     "node-cron": "^3.0.0",
-    "simple-git": "^2.46.0"
+    "simple-git": "^2.46.0",
+    "yaml-config": "^0.3.0"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
