@@ -9,20 +9,21 @@ let settings = config.readConfig(relative)
 
 async function bot(option) {
     let gitStatus = await git.status('-s')
+    let message = option.message;
     if(gitStatus.modified.length != 0)
     {
         console.log('\nConnecting to your repository, Please wait')
         table(gitStatus)
-        let message = option.message;
         if(message === undefined){
             message = settings.message[Math.floor(Math.random() * (settings.message.length - 1))]
         }
-        console.log(message)
         commit(await git.add('./*').commit(message))
         let branch = await git.branch()
         await git.pull('origin', branch.current)
         await git.push('origin', branch.current)
     }
+
+    return message 
 }
 
 module.exports = {

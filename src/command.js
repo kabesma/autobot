@@ -11,12 +11,13 @@ const chalk = require('chalk')
  **/
 async function running(option) {
     let now = new Date()
+    let message
     console.log(chalk.green('Starting AutoBot development server : ' + now))
     cron.schedule('* * * * *', async () => {
         now = new Date()
-        await bot(option)
+        message = await bot(option)
         console.log(chalk.blue('Active date : ' + now))
-        console.log('Running a task every minute, with message ' + option.message + ' - ' + now);
+        console.log('Running a task, with message ' + message + ' - ' + now);
     })
 }
 
