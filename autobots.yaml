@@ -1,2 +1,2 @@
 default:
-  message: ['Update all', 'Push all change', 'Auto message push', 'Bot', 'Autobot']
+  message: ['Update all', 'Push all change', 'Auto push message', 'Bot', 'Autobot']
