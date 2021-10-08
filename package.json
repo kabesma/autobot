@@ -4,7 +4,7 @@
   "description": "This is autobot git push with cron job",
   "main": "index.js",
   "scripts": {
-    "test": "test.js"
+    "test": "mocha"
   },
   "files": [
     "src",
@@ -41,6 +41,7 @@
     "commander": "^8.2.0",
     "figlet": "^1.5.2",
     "fs": "^0.0.1-security",
+    "mocha": "^9.1.2",
     "node-cron": "^3.0.0",
     "simple-git": "^2.46.0",
     "yaml-config": "^0.3.0"
