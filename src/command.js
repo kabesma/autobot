@@ -16,10 +16,8 @@ async function running(option) {
     if(option.time === undefined){
         minute = '* * * * *'
     } else {
-//         '*/'++' * * * *'
         minute = '*/'+option.time+' * * * *'
     }
-//     console.log(minute)
     console.log(chalk.green('Starting AutoBot development server : ' + now))
     cron.schedule(minute, async () => {
         now = new Date()
