@@ -15,6 +15,7 @@ async function main() {
           'Use run for autobot'
         )
         .option('-m, --message <string>', 'Add message with optional type')
+        .option('-t, --time <string>', 'This option for time schedule on minute')
         .action(running)
      program
         .command('test')
