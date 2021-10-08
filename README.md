@@ -68,7 +68,7 @@ autbot-git run -m 'This is autobot-git push'
 [MIT](https://github.com/cyrilwanner/autobot-git/blob/master/LICENSE)
 (MIT License)
 
-Copyright (c) 2010 LearnBoost &lt;dev@learnboost.com&gt;
+Copyright (c) 2010 LearnBoost &lt;muhammad@akil.co.id&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
