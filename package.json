@@ -1,6 +1,6 @@
 {
   "name": "autobot-git",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This is autobot git push with cron job",
   "main": "index.js",
   "scripts": {
