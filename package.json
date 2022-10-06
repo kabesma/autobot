@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/kabesma/autobot#readme",
   "dependencies": {
-    "chalk": "^4.1.2",
+    "chalk": "^5.1.0",
     "cli-table": "^0.3.6",
     "commander": "^8.2.0",
     "figlet": "^1.5.2",
