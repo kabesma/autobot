@@ -43,7 +43,7 @@
     "fs": "^0.0.1-security",
     "mocha": "^10.2.0",
     "node-cron": "^3.0.0",
-    "simple-git": "^2.46.0",
+    "simple-git": "^3.16.0",
     "yaml-config": "^0.3.0"
   },
   "devDependencies": {
